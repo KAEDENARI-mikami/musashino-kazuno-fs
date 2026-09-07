@@ -1,5 +1,7 @@
 {
-  "description": "Displays school development project PDFs with dynamic visuals and QR codes for easy access, featuring Akita-themed backgrounds for an engaging user experience.",
+  "title": "秋田県鹿角市 企業広報プロデュース Ｒ8年度",
+  "description": "秋田県鹿角市の企業広報プロデュース Ｒ8年度の紹介サイトです。",
+  "language": "ja",
   "robots": {
     "index": false
   },

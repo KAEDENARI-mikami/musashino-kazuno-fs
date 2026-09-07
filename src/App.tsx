@@ -325,7 +325,7 @@ function StatsBar() {
       {[
         { value: String(PRESENTATIONS.length), label: "発表グループ" },
         { value: String(participantCount), label: "参加学生" },
-        { value: "鹿角市", label: "フィールド" },
+        { value: "鹿角市", label: "地域" },
       ].map(({ value, label }) => (
         <div key={label}>
           <div className="font-serif-jp text-2xl font-bold text-white mb-1 gold-shimmer">
@@ -375,7 +375,7 @@ export default function App() {
             </div>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <span className="text-white/60 text-sm">令和7年度</span>
+            <span className="text-white/60 text-sm">Ｒ8年度</span>
             <span className="text-white/60 text-sm">|</span>
             <span className="text-white/60 text-sm">秋田県 鹿角市</span>
           </div>
@@ -386,23 +386,23 @@ export default function App() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-[#d4a843] animate-pulse" />
-              <span className="text-white/80 text-xs tracking-wider">令和7年度 成果報告会</span>
+              <span className="text-white/80 text-xs tracking-wider">Ｒ8年度 企業広報プロデュース</span>
             </div>
 
             <h1 className="font-serif-jp text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
-              武蔵野大学
+              秋田県 鹿角市
               <br />
-              <span className="gold-shimmer">発展FS</span>
+              <span className="gold-shimmer">企業広報プロデュース</span>
               <br />
-              成果報告会
+              Ｒ8年度
             </h1>
 
             <p className="mt-10 max-w-2xl border-l border-[#d4a843]/80 pl-5 font-serif-jp text-base md:text-xl leading-loose tracking-[0.08em] text-[#eee7d7]">
-              <span className="text-[#e1b653]">秋田県鹿角市</span>でのフィールドスタディを通じて、
+              <span className="text-[#e1b653]">秋田県鹿角市</span>の企業とともに、
               <br className="hidden md:block" />
-              地域の課題や魅力を探求した学生たちの
+              地域の魅力と事業の価値を伝える
               <br className="hidden md:block" />
-              <span className="text-white">研究成果</span>をご覧ください。
+              <span className="text-white">企業広報</span>をプロデュースします。
             </p>
 
             <div className="mt-8 flex items-center gap-3">
@@ -492,7 +492,7 @@ export default function App() {
 
         <div className="relative z-10 px-6 md:px-12 lg:px-24 py-24 text-center max-w-3xl mx-auto">
           <p className="text-[#d4a843] text-[0.68rem] md:text-xs tracking-[0.35em] uppercase mb-5">
-            About the Field
+            About the Project
           </p>
           <h2 className="font-serif-jp text-4xl md:text-6xl font-bold tracking-[0.08em] text-[#f5f0e8] mb-7">
             秋田県 鹿角市
@@ -504,11 +504,10 @@ export default function App() {
             豊かな自然と
             <span className="text-[#f5f0e8]">農業・伝統文化・観光資源</span>に恵まれたまち。
             <br className="hidden md:block" />
-            人口減少や産業の課題に向き合いながら、
+            地域の企業が持つ魅力と想いを見つめ、
             <br className="hidden md:block" />
             <span className="md:whitespace-nowrap">
-              学生たちは地域の方々とともに
-              <span className="text-[#e1b653]">未来への可能性</span>を探りました。
+              <span className="text-[#e1b653]">企業広報プロデュース</span>を通じて未来へつなぎます。
             </span>
           </p>
 
@@ -534,11 +533,11 @@ export default function App() {
           <UniversityMark />
           <div className="text-left">
             <p className="text-white/80 font-medium text-sm">武蔵野大学</p>
-            <p className="text-white/40 text-xs">令和7年度 発展FS 成果報告会</p>
+            <p className="text-white/40 text-xs">Ｒ8年度 企業広報プロデュース</p>
           </div>
         </div>
         <p className="text-white/30 text-xs">
-          © 2025 Musashino University. Field Study — Kazuno, Akita.
+          © 2026 Musashino University. Corporate Communications — Kazuno, Akita.
         </p>
       </footer>
     </div>
