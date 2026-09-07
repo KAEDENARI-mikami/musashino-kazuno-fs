@@ -1,0 +1,10 @@
+{
+  "description": "Displays school development project PDFs with dynamic visuals and QR codes for easy access, featuring Akita-themed backgrounds for an engaging user experience.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
