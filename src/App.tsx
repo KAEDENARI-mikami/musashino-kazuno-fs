@@ -115,41 +115,6 @@ function FallingLeaves() {
   );
 }
 
-type FieldIconKind = "rice" | "mountain" | "shrine";
-
-function FieldIcon({ kind }: { kind: FieldIconKind }) {
-  return (
-    <svg
-      viewBox="0 0 32 32"
-      className="mx-auto mb-3 h-8 w-8 text-[#d4a843]"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.5"
-      aria-hidden="true"
-    >
-      {kind === "rice" && (
-        <>
-          <path d="M11 27C10 18 11 11 9 5M11 16c-3-1-5-3-6-5M11 13c2-2 4-4 5-7M11 20c-3-1-5-3-7-5" />
-          <path d="M16 27c0-7 3-12 8-17M16 17c-2-1-3-3-3-5M16 13c2-1 4-3 5-5" />
-        </>
-      )}
-      {kind === "mountain" && (
-        <>
-          <path d="m4 26 8-12 5 7 3-4 8 9H4Z" />
-          <path d="m9 26 5-7 3 4" />
-        </>
-      )}
-      {kind === "shrine" && (
-        <>
-          <path d="M5 10h22M8 10l8-5 8 5M9 13v13M23 13v13M6 26h20M13 13v13M19 13v13" />
-        </>
-      )}
-    </svg>
-  );
-}
-
 function PresentationCard({
   presentation,
   index,
@@ -464,13 +429,8 @@ export default function App() {
           </p>
 
           <div className="mt-10 grid grid-cols-3 gap-6">
-            {[
-              { icon: "rice" as const, label: "農業・食文化" },
-              { icon: "mountain" as const, label: "豊かな自然" },
-              { icon: "shrine" as const, label: "歴史・伝統" },
-            ].map(({ icon, label }) => (
-              <div key={label} className="card-glass rounded-xl p-4 text-center">
-                <FieldIcon kind={icon} />
+            {["農業・食文化", "豊かな自然", "歴史・伝統"].map((label) => (
+              <div key={label} className="card-glass rounded-xl p-6 text-center">
                 <p className="text-white/70 text-xs">{label}</p>
               </div>
             ))}
