@@ -19,27 +19,27 @@ interface Presentation {
 const PRESENTATIONS: Presentation[] = [
   {
     id: 1,
-    group: "ジョイタム株式会社",
-    title: "人と人をつなぎ、ジョイタムの未来を拓く",
-    subtitle: "自信と対話が生まれる職場作り",
-    members: ["宮﨑 昇太郎", "佐々木 青海", "宋 晨昊", "全聖士", "三上敦矢"],
-    faculty: "武蔵野大学",
-    date: "Ｒ8年度",
-    tags: ["職場づくり", "組織・対話"],
-    pdfUrl: "https://drive.google.com/file/d/1f54QOm9GvH7TWoox7jvjWm67vGoEEwxu/view?usp=sharing",
-    accent: "#c0622b",
-  },
-  {
-    id: 2,
     group: "青山精工",
     title: "持続的な広報活動を目指して",
     subtitle: "動画作成から持続可能な広報システムへ",
     members: ["長岡嘉人", "松井ほのか", "辻村皇", "石坂颯羽", "謝博涵"],
     faculty: "武蔵野大学",
-    date: "Ｒ8年度",
+    date: "令和８年度",
     tags: ["広報活動", "動画制作"],
     pdfUrl: "https://drive.google.com/file/d/10UX_He4KrJqLwwOhoVC06-9eTzJaf20h/view?usp=sharing",
     accent: "#d4a843",
+  },
+  {
+    id: 2,
+    group: "ジョイタム株式会社",
+    title: "人と人をつなぎ、ジョイタムの未来を拓く",
+    subtitle: "自信と対話が生まれる職場作り",
+    members: ["宮﨑 昇太郎", "佐々木 青海", "宋 晨昊", "全聖士", "三上敦矢"],
+    faculty: "武蔵野大学",
+    date: "令和８年度",
+    tags: ["職場づくり", "組織・対話"],
+    pdfUrl: "https://drive.google.com/file/d/1f54QOm9GvH7TWoox7jvjWm67vGoEEwxu/view?usp=sharing",
+    accent: "#c0622b",
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const PRESENTATIONS: Presentation[] = [
     subtitle: "浅利佐助商店班成果発表",
     members: ["森陽菜", "余家宝", "中村遙希", "吉田堅"],
     faculty: "武蔵野大学",
-    date: "Ｒ8年度",
+    date: "令和８年度",
     tags: ["SNS", "採用・定着"],
     pdfUrl: "https://drive.google.com/file/d/11unbz9zA6lPVVUTZcJxgxxlHMRctCLRy/view?usp=sharing",
     accent: "#3a7d44",
@@ -261,9 +261,6 @@ function PresentationCard({
             className="w-full py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-2"
             style={{ background: presentation.accent }}
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.24M16.24 12l2.88-2.88M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
             資料を開く
           </span>
         </div>
@@ -330,7 +327,7 @@ export default function App() {
             </div>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <span className="text-white/60 text-sm">Ｒ8年度</span>
+            <span className="text-white/60 text-sm">令和８年度</span>
             <span className="text-white/60 text-sm">|</span>
             <span className="text-white/60 text-sm">秋田県 鹿角市</span>
           </div>
@@ -341,15 +338,15 @@ export default function App() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-[#d4a843] animate-pulse" />
-              <span className="text-white/80 text-xs tracking-wider">Ｒ8年度 企業広報プロデュース</span>
+              <span className="text-white/80 text-xs tracking-wider">令和８年度 発展FS</span>
             </div>
 
-            <h1 className="font-serif-jp text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4">
-              秋田県 鹿角市
-              <br />
-              <span className="gold-shimmer">企業広報プロデュース</span>
-              <br />
-              Ｒ8年度
+            <h1 className="font-serif-jp text-2xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.45] mb-4">
+              <span className="block text-white/90">令和８年度　武蔵野大学発展FS</span>
+              <span className="mt-3 block text-white">「企業広報プロデュース〜</span>
+              <span className="block gold-shimmer">若手社員 × 学生で考える！</span>
+              <span className="block text-white">地域企業の広報〜」</span>
+              <span className="mt-3 block text-white">成果発表会</span>
             </h1>
 
             <p className="mt-10 max-w-2xl border-l border-[#d4a843]/80 pl-5 font-serif-jp text-base md:text-xl leading-loose tracking-[0.08em] text-[#eee7d7]">
@@ -488,7 +485,7 @@ export default function App() {
           <UniversityMark />
           <div className="text-left">
             <p className="text-white/80 font-medium text-sm">武蔵野大学</p>
-            <p className="text-white/40 text-xs">Ｒ8年度 企業広報プロデュース</p>
+            <p className="text-white/40 text-xs">令和８年度 発展FS 成果発表会</p>
           </div>
         </div>
         <p className="text-white/30 text-xs">
