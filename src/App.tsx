@@ -17,7 +17,44 @@ interface Presentation {
   accent: string;
 }
 
-const PRESENTATIONS: Presentation[] = [];
+const PRESENTATIONS: Presentation[] = [
+  {
+    id: 1,
+    group: "企業広報プロデュース",
+    title: "成果物 01",
+    subtitle: "Google Driveに保存された成果物",
+    members: [],
+    faculty: "武蔵野大学",
+    date: "Ｒ8年度",
+    tags: ["成果物"],
+    pdfUrl: "https://drive.google.com/file/d/11unbz9zA6lPVVUTZcJxgxxlHMRctCLRy/view?usp=sharing",
+    accent: "#c0622b",
+  },
+  {
+    id: 2,
+    group: "企業広報プロデュース",
+    title: "成果物 02",
+    subtitle: "Google Driveに保存された成果物",
+    members: [],
+    faculty: "武蔵野大学",
+    date: "Ｒ8年度",
+    tags: ["成果物"],
+    pdfUrl: "https://drive.google.com/file/d/10UX_He4KrJqLwwOhoVC06-9eTzJaf20h/view?usp=sharing",
+    accent: "#d4a843",
+  },
+  {
+    id: 3,
+    group: "企業広報プロデュース",
+    title: "成果物 03",
+    subtitle: "Google Driveに保存された成果物",
+    members: [],
+    faculty: "武蔵野大学",
+    date: "Ｒ8年度",
+    tags: ["成果物"],
+    pdfUrl: "https://drive.google.com/file/d/1f54QOm9GvH7TWoox7jvjWm67vGoEEwxu/view?usp=sharing",
+    accent: "#3a7d44",
+  },
+];
 
 const LEAF_COLORS = ["#c0622b", "#d4a843", "#8b6b42"];
 
@@ -163,7 +200,7 @@ function QRModal({
         <p className="text-center text-xs text-gray-500 mb-6 leading-relaxed">
           QRコードを読み取ると
           <br />
-          発表資料PDFが開きます
+          成果物のページが開きます
         </p>
 
         <div className="flex gap-3">
@@ -174,7 +211,7 @@ function QRModal({
             className="flex-1 py-3 rounded-xl text-center text-sm font-medium text-white transition-all hover:opacity-90 active:scale-95"
             style={{ background: presentation.accent }}
           >
-            PDFを開く
+            成果物を開く
           </a>
           <button
             onClick={onClose}
