@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { QRCodeSVG } from "qrcode.react";
 
 const HERO_BG =
   "https://images.unsplash.com/photo-1619441207978-3d326c46e2c9?w=1920&h=1080&fit=crop&auto=format";
@@ -151,80 +150,6 @@ function FieldIcon({ kind }: { kind: FieldIconKind }) {
   );
 }
 
-function QRModal({
-  presentation,
-  onClose,
-}: {
-  presentation: Presentation;
-  onClose: () => void;
-}) {
-  return (
-    <div
-      className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4"
-      onClick={onClose}
-    >
-      <div
-        className="modal-content card-glass-light rounded-3xl p-8 max-w-sm w-full shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="text-center mb-6">
-          <div
-            className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
-            style={{
-              background: `${presentation.accent}20`,
-              border: `1px solid ${presentation.accent}60`,
-              color: presentation.accent,
-            }}
-          >
-            発表 {presentation.id}
-          </div>
-          <h3 className="font-serif-jp text-lg font-bold text-gray-900 leading-tight mb-1">
-            {presentation.group}
-          </h3>
-          <p className="text-sm text-gray-500">{presentation.title}</p>
-        </div>
-
-        <div className="flex justify-center mb-6">
-          <div className="p-4 bg-white rounded-2xl shadow-inner qr-glow">
-            <QRCodeSVG
-              value={presentation.pdfUrl}
-              size={180}
-              bgColor="#ffffff"
-              fgColor="#1a2535"
-              level="H"
-              includeMargin={false}
-            />
-          </div>
-        </div>
-
-        <p className="text-center text-xs text-gray-500 mb-6 leading-relaxed">
-          QRコードを読み取ると
-          <br />
-          成果物のページが開きます
-        </p>
-
-        <div className="flex gap-3">
-          <a
-            href={presentation.pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 py-3 rounded-xl text-center text-sm font-medium text-white transition-all hover:opacity-90 active:scale-95"
-            style={{ background: presentation.accent }}
-          >
-            成果物を開く
-          </a>
-          <button
-            onClick={onClose}
-            className="flex-1 py-3 rounded-xl text-center text-sm font-medium bg-gray-100 text-gray-700 hover:bg-gray-200 transition-all active:scale-95"
-          >
-            閉じる
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function PresentationCard({
   presentation,
   index,
@@ -232,7 +157,6 @@ function PresentationCard({
   presentation: Presentation;
   index: number;
 }) {
-  const [showQR, setShowQR] = useState(false);
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -250,12 +174,16 @@ function PresentationCard({
   }, [index]);
 
   return (
-    <>
+    <a
+      href={presentation.pdfUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block"
+    >
       <div
         ref={ref}
         className={`card-hover rounded-2xl overflow-hidden cursor-pointer group ${visible ? "animate-float-up" : "opacity-0"}`}
         style={{ animationDelay: `${index * 80}ms` }}
-        onClick={() => setShowQR(true)}
       >
         {/* Thumbnail */}
         <div className="relative h-44 overflow-hidden bg-[#1a2535]">
@@ -266,12 +194,6 @@ function PresentationCard({
               style={{ background: presentation.accent }}
             >
               {presentation.id}
-            </div>
-          </div>
-          {/* QR hint */}
-          <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-white/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-lg">
-              📱 QRコード
             </div>
           </div>
           {/* Title overlay */}
@@ -335,22 +257,18 @@ function PresentationCard({
           </div>
 
           {/* CTA */}
-          <button
+          <span
             className="w-full py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:opacity-90 active:scale-95 flex items-center justify-center gap-2"
             style={{ background: presentation.accent }}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.24M16.24 12l2.88-2.88M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            QRコード・資料を見る
-          </button>
+            資料を開く
+          </span>
         </div>
       </div>
-
-      {showQR && (
-        <QRModal presentation={presentation} onClose={() => setShowQR(false)} />
-      )}
-    </>
+    </a>
   );
 }
 
